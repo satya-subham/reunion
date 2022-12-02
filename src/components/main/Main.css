@@ -1,0 +1,47 @@
+.main_container{
+    width: 100%;
+    height: auto;
+}
+.banner_section{
+    width: 80%;
+    height: 10%;
+    margin: 5% 15%;
+}
+.banner_section div{
+    width: 227px;
+    height: 80px;
+    padding: 7px;
+    margin: 20px 10px;
+    border-radius: 5px;
+    text-align: center;
+    background-color: rgb(239, 229, 229);
+    display: inline-block;
+}
+
+.img_divs_container{
+    width: 80%;
+    height: auto;
+    margin: 0% 15%;
+}
+.house_div{
+    display: inline-block;
+    margin: 10px;
+    background-color: rgb(239, 229, 229);
+    border-radius: 10px;
+}
+.house_img_div img{
+    width: 250px;
+    height: 200px;
+    border-radius: 10px;
+}
+.houserent_fav_btn{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.bed_room_area{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-bottom: 10px;
+}

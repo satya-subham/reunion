@@ -1,24 +1,23 @@
-import logo from './logo.svg';
+
+import 'antd/dist/reset.css';
+import { useState } from 'react';
+import { Routes, Route } from 'react-router-dom';
 import './App.css';
+import { Favorite } from './components/favourite/Favorite';
+import { Header } from './components/header/Header';
+import { Main } from './components/main/Main';
 
 function App() {
+  const [search, setSearch] = useState('')
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Header setSearch={setSearch}/>
+      
+      <Routes>
+      <Route path='/' element={<Main search={search}/>}/>
+        <Route path='/Favorite' element={<Favorite/>}/>
+      </Routes>
+    </>
   );
 }
 
