@@ -4,7 +4,7 @@ import { Button } from "antd";
 
 import "./Header.css";
 
-export function Header( props ) {
+export function Header(props) {
   return (
     <>
       <header>
@@ -41,15 +41,22 @@ export function Header( props ) {
                 </select>
               </div>
               <div>
-                <input type="text" name="" id="" className="search_input" placeholder="search here..." onChange={(e)=>props.setSearch(e.target.value)}/>
+                <input
+                  type="text"
+                  name=""
+                  id=""
+                  className="search_input"
+                  placeholder="search here..."
+                  onChange={(e) => props.setSearch(e.target.value)}
+                />
               </div>
             </div>
           </div>
           <div className="buttons_container">
             <Button>Login</Button>
             <Button type="primary">Sign Up</Button>
-            <Link to='/Favorite'>
-            <Button>Fav</Button>
+            <Link to="/Favorite">
+              <Button>Fav</Button>
             </Link>
           </div>
         </div>
