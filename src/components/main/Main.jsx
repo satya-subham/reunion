@@ -1,9 +1,9 @@
 import { Button } from "antd";
 import React, { useContext, useEffect, useState } from "react";
+import { mainContext } from "../context/Context";
 import data from "./StaticData";
 
 import "./Main.css";
-import { mainContext } from "../context/Context";
 
 export function Main(props) {
   const [houseData, setHouseData] = useState(data);
