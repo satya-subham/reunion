@@ -4,7 +4,14 @@ import { Button } from "antd";
 
 export function Favorite() {
   const { fav, setFav } = useContext(mainContext);
-  console.log(fav);
+
+  const removeFav = (id) => {
+    let removeItem = fav.filter((item, ind) => {
+      return ind != id;
+    });
+    setFav(removeItem);
+  };
+
   return (
     <>
       <h1>Find Your Favorite Here !</h1>
@@ -18,8 +25,8 @@ export function Favorite() {
               <h2>{item.price}/month</h2>
             </div>
             <div>
-              <Button shape='circle'>
-              <i class="fa-solid fa-xmark"></i>
+              <Button shape="circle" onClick={() => removeFav(ind)}>
+                <i class="fa-solid fa-xmark"></i>
               </Button>
             </div>
           </div>
