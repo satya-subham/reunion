@@ -1,16 +1,16 @@
-import React, { createContext, useState } from 'react';
+import React, { createContext, useState } from "react";
 
- const mainContext = createContext();
+const mainContext = createContext();
 
-export function Context({children}) {
-    const [fav, setFav] = useState([])
+export function Context({ children }) {
+  const [fav, setFav] = useState([]);
 
   return (
     <>
-    <mainContext.Provider value={{ fav, setFav }}>
+      <mainContext.Provider value={{ fav, setFav }}>
         {children}
-    </mainContext.Provider>
+      </mainContext.Provider>
     </>
-  )
+  );
 }
- export { mainContext }
+export { mainContext };
