@@ -7,9 +7,8 @@ export function Favorite() {
   console.log(fav);
   return (
     <>
-      <h1>welcome to favorite</h1>
+      <h1>Find Your Favorite Here !</h1>
       {fav.map((item, ind) => (
-        // <img src={item.img} alt="" />
         <div className="house_div" key={ind}>
           <div className="house_img_div">
             <img src={item.img} alt="house img" />
