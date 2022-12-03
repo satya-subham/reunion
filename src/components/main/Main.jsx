@@ -49,7 +49,6 @@ export function Main(props) {
           item.price === "") &&
         (searchData.date === "" || searchData.date <= item.date)
       ) {
-        console.log(item);
         return item;
       }
     });
