@@ -31,8 +31,8 @@ export function Favorite() {
               </Button>
             </div>
           </div>
-          <h2 style={{ "margin-left": "12px" }}>{item.name}</h2>
-          <p style={{ "margin-left": "12px" }}>{item.location}</p>
+          <h2 className="house_name">{item.name}</h2>
+          <p className="house_name">{item.location}</p>
           <div className="bed_room_area">
             <div>
               <i class="fa-solid fa-bed"/>
