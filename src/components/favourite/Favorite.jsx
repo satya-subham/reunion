@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
-import { mainContext } from "../context/Context";
 import { Button } from "antd";
+
+import { mainContext } from "../context/Context";
 
 export function Favorite() {
   const { fav, setFav } = useContext(mainContext);
