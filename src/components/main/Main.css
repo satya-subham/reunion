@@ -29,6 +29,9 @@
   background-color: rgb(239, 229, 229);
   border-radius: 10px;
 }
+.house_name{
+  margin-left: 12px
+}
 .house_img_div img {
   width: 250px;
   height: 200px;

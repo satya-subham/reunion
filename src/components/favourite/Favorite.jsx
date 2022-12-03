@@ -27,7 +27,7 @@ export function Favorite() {
             </div>
             <div>
               <Button shape="circle" onClick={() => removeFav(ind)}>
-                <i class="fa-solid fa-xmark"></i>
+                <i class="fa-solid fa-xmark"/>
               </Button>
             </div>
           </div>
@@ -35,15 +35,15 @@ export function Favorite() {
           <p style={{ "margin-left": "12px" }}>{item.location}</p>
           <div className="bed_room_area">
             <div>
-              <i class="fa-solid fa-bed"></i>
+              <i class="fa-solid fa-bed"/>
               <span>{item.bed}</span>
             </div>
             <div>
-              <i class="fa-solid fa-bath"></i>
+              <i class="fa-solid fa-bath"/>
               <span>{item.bathroom}</span>
             </div>
             <div>
-              <i class="fa-solid fa-layer-group"></i>
+              <i class="fa-solid fa-layer-group"/>
               <span>{item.area}</span>
             </div>
           </div>

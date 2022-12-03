@@ -4,7 +4,12 @@ import { Button } from "antd";
 
 import "./Header.css";
 
-export function Header(props) {
+export function Header({setSearch}) {
+
+  const handleHeaderSearch = (e) => {
+    setSearch(e.target.value)
+  }
+
   return (
     <>
       <header>
@@ -12,7 +17,7 @@ export function Header(props) {
           <div className="links_container">
             <div className="buttons">
               <div>
-                <i class="fa-solid fa-envelope-open"></i>
+                <i class="fa-solid fa-envelope-open"/>
                 <span className="logo_heading">Estatery</span>
               </div>
               <div>
@@ -47,7 +52,7 @@ export function Header(props) {
                   id=""
                   className="search_input"
                   placeholder="search here..."
-                  onChange={(e) => props.setSearch(e.target.value)}
+                  onChange={handleHeaderSearch}
                 />
               </div>
             </div>

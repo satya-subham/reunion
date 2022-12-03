@@ -6,7 +6,7 @@ import data from "./StaticData";
 
 import "./Main.css";
 
-export function Main(props) {
+export function Main({search}) {
   const [houseData, setHouseData] = useState(data);
   const [filterData, setFilterData] = useState([]);
   const [searchData, setSearchData] = useState({
@@ -15,33 +15,28 @@ export function Main(props) {
     price: "",
     name: "",
   });
-  const [addFav, setAddFav] = useState(false);
-  const [color, setColor] = useState({
-    "background-color": "",
-  });
+
+  
   const { fav, setFav } = useContext(mainContext);
 
   useEffect(() => {
     let filterItem = houseData.filter((item) => {
       if (item.name) {
-        return item.name.toLowerCase().includes(props.search.toLowerCase());
+        return item.name.toLowerCase().includes(search.toLowerCase());
       }
     });
     setFilterData(filterItem);
-  }, [props.search]);
+  }, [search]);
 
   const addToFav = (item) => {
     setFav([...fav, item]);
   };
 
-  const search = (e) => {
+  const handleMainSearch = (e) => {
     let priceRange = searchData.price.split("-");
     let lowerLimit = parseInt(priceRange[0]);
     let upperLimit = parseInt(priceRange[1]);
     let serchItem = houseData.filter((item) => {
-      // console.log(searchData.date, item.date);
-      // let date1 = new Date(houseData.date);
-      // let date2 = new Date(item.date);
       if (
         (searchData.location === "" || searchData.location === item.location) &&
         (searchData.name === "" || searchData.name === item.name) &&
@@ -55,7 +50,7 @@ export function Main(props) {
     setFilterData(serchItem);
   };
 
-  const select = (e) => {
+  const handleSelect = (e) => {
     setSearchData({ ...searchData, [e.target.name]: e.target.value });
   };
 
@@ -72,7 +67,7 @@ export function Main(props) {
                   name="location"
                   id="location"
                   className="option"
-                  onChange={select}
+                  onChange={handleSelect}
                 >
                   <option value="">Select Place</option>
                   <option value="mumbai">mumbai</option>
@@ -82,7 +77,7 @@ export function Main(props) {
               </div>
               <div className="move-in-date">
                 <p>when</p>
-                <input type="date" name="date" id="date" onChange={select} />
+                <input type="date" name="date" id="date" onChange={handleSelect} />
               </div>
               <div className="price">
                 <p>price</p>
@@ -90,7 +85,7 @@ export function Main(props) {
                   name="price"
                   id="price"
                   className="option"
-                  onChange={select}
+                  onChange={handleSelect}
                 >
                   <option value="">Select Price</option>
                   <option value="1000-2000">1000-2000</option>
@@ -104,7 +99,7 @@ export function Main(props) {
                   name="name"
                   id="name"
                   className="option"
-                  onChange={select}
+                  onChange={handleSelect}
                 >
                   <option value="">Select House</option>
                   <option value="duplex">duplex</option>
@@ -113,7 +108,7 @@ export function Main(props) {
                 </select>
               </div>
 
-              <Button type="primary" onClick={search}>
+              <Button type="primary" onClick={handleMainSearch}>
                 Search
               </Button>
             </div>
@@ -131,27 +126,26 @@ export function Main(props) {
                   <div>
                     <Button
                       shape="circle"
-                      style={color}
                       onClick={() => addToFav(item)}
                       id={item.id}
                     >
-                      <i class="fa-regular fa-heart"></i>
+                      <i class="fa-regular fa-heart"/>
                     </Button>
                   </div>
                 </div>
-                <h2 style={{ "margin-left": "12px" }}>{item.name}</h2>
-                <p style={{ "margin-left": "12px" }}>{item.location}</p>
+                <h2 className="house_name">{item.name}</h2>
+                <p className="house_name">{item.location}</p>
                 <div className="bed_room_area">
                   <div>
-                    <i class="fa-solid fa-bed"></i>
+                    <i className="fa-solid fa-bed"/>
                     <span>{item.bed}</span>
                   </div>
                   <div>
-                    <i class="fa-solid fa-bath"></i>
+                    <i className="fa-solid fa-bath"/>
                     <span>{item.bathroom}</span>
                   </div>
                   <div>
-                    <i class="fa-solid fa-layer-group"></i>
+                    <i className="fa-solid fa-layer-group"/>
                     <span>{item.area}</span>
                   </div>
                 </div>
