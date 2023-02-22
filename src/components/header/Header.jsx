@@ -1,13 +1,24 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "antd";
 
 import "./Header.css";
+import { mainContext } from "../context/Context";
 
 export function Header({setSearch}) {
 
+  const {login , setLogin, signUp, setSignUp} = useContext(mainContext)
+
   const handleHeaderSearch = (e) => {
     setSearch(e.target.value)
+  }
+
+  const handleLogin = (e) => {
+    setLogin(true)
+  }
+
+  const handleSignup = (e) => {
+    setSignUp(true)
   }
 
   return (
@@ -18,7 +29,7 @@ export function Header({setSearch}) {
             <div className="buttons">
               <div>
                 <i class="fa-solid fa-envelope-open"/>
-                <span className="logo_heading">Estatery</span>
+                <span className="logo_heading"><Link to="/">Estatery</Link></span>
               </div>
               <div>
                 <Link className="link">Rent</Link>
@@ -58,8 +69,8 @@ export function Header({setSearch}) {
             </div>
           </div>
           <div className="buttons_container">
-            <Button>Login</Button>
-            <Button type="primary">Sign Up</Button>
+            <Button onClick={handleLogin}>Login</Button>
+            <Button type="primary" onClick={handleSignup}>Sign Up</Button>
             <Link to="/Favorite">
               <Button>Fav</Button>
             </Link>
